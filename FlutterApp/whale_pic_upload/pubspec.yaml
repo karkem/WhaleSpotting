@@ -1,0 +1,33 @@
+name: whale_pic_upload
+description: "A new Flutter project."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.8.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+
+  # ✅ Added dependencies for your app:
+  camera: ^0.10.5
+  googleapis: ^11.4.0
+  googleapis_auth: ^1.4.0
+  http: ^0.13.6
+  path_provider: ^2.1.2  # ✅ This was missing!
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+
+  # ✅ Register your credentials file here:
+  assets:
+    - assets/credentials.json
