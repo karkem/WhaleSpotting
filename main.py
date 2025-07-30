@@ -34,7 +34,9 @@ def authenticate_google():
     if os.path.exists("token.json"):
         creds = Credentials.from_authorized_user_file("token.json", SCOPES)
     else:
-        flow = InstalledAppFlow.from_client_secrets_file("credentials.json", SCOPES)
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        cred_path = os.path.join(script_dir, "credentials.json")
+        flow = InstalledAppFlow.from_client_secrets_file(cred_path, SCOPES)
         creds = flow.run_local_server(port=0)
         with open("token.json", "w") as token:
             token.write(creds.to_json())
